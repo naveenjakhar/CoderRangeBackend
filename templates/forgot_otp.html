@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/e72f201fc4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>otp verification</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/message.css" media="screen" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow fixed-top" style=" background-color: white;border-bottom: 1px solid white ">
+        <a href="/" class="navbar-brand">
+            <img src="/static/image/logo_copy.png" class="image-fluid text-white" alt="" style="height: 65px; ">
+        </a>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span style="color: #0c265f;"><i class="fas fa-bars fa-2x"></i></span>
+        </button>
+    </nav>
+    <div class="container my-5 mt-5">
+        <div class="row justify-content-center" style="background-color: #e4edf7; border-radius: 25px; border: 1px solid#7194bb">
+            <form action="/forgot/password/otp" class="form shadow" method="POST" onsubmit="return verifyOTP()">
+                {%csrf_token%}
+                <div class="form-row m-1 justify-content-center">
+                    <ul>
+                        <li style="display: block;">
+                    <h4>Enter Your OTP </h4>
+                </li>
+                <li style="display: block;">{% for messages in messages%}
+                    <h5 style="color:rgb(245, 110, 110);">{{messages}}</h5>
+                {%endfor%}</li>
+                </ul>
+                </div>
+                <div class="form-row m-3 justify-content-center">
+                    <h6 class="text-center">One-Time Password sent to {{number}} </h6>
+                </div>
+                <div class="form-row m-4">
+                    <div class="col">
+                        <input type="text" id="OPT" class="form-control" name='opt' placeholder="Enter the otp">
+                        <span id="codeele" class="text-danger font-weigth-bold"></span>
+                    </div>
+                </div>
+                <div class="timer text-center mb-3">You can resend otp 00:<span id="iterator">30</span> seconds</div>
+                <div class="form-row pb-2 justify-content-center">
+                    <div class="text-center">
+                        <p>Didn't received the code?</p>
+                    </div><br>
+                    <div>
+                        <a onclick="run(); return false" href="/forgot/forgot_resend/opt" id="resend" class="pl-3" style="text-decoration: none; cursor: pointer; opacity: 1;">Resend code</a>
+                    </div>
+                </div>
+                <div class="form-row m-4">
+                    <input class="btn btn-info btn-block" type="submit" value="verify">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script >
+        var i=30;
+        var j=0;
+       var start= setInterval(()=>
+        {
+            var iterator = document.getElementById("iterator");
+            var resend = document.getElementById("resend");
+            if(i>=0 && i>=10)
+            {
+            iterator.innerHTML=i;
+            resend.style.opacity="0.2";
+            }
+            else if(i>=0 && i<=10)
+            {
+                iterator.innerHTML=j+ '' +i;
+                if(i==0){
+                    resend.style.opacity="1";
+                }   
+            }
+            i--;
+           
+        },1000);
+
+
+        function run()
+        {
+            if(iterator.innerHTML==0)
+            {
+                i=30;
+                iterator.innerHTML=start();
+                
+            }
+        }
+
+        function verifyOTP() {
+            var code = document.getElementById('OPT').value;
+            if (code == "") {
+                document.getElementById('codeele').innerHTML = "please enter OTP";
+                return false;
+            } else if ((!(/^\d{6}$/).test(code))) {
+                document.getElementById('codeele').innerHTML = "Invalid,OTP should have 6 digits";
+                return false;
+            } else {
+                document.getElementById('codeele').innerHTML = "";
+                true;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

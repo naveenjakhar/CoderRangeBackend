@@ -1,0 +1,116 @@
+:root {
+    --back: #fafbfc;
+    --disc: #ff5483;
+    --button: #017a9b;
+    --txt: #05001d;
+}
+
+#subdiv {
+    background-color: white;
+    height: auto;
+    margin-top: 70px;
+    border-radius: 25px;
+}
+
+body {
+    background-color: var(--back);
+}
+
+#order {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--txt);
+}
+
+#mainclass {
+    margin-top: 100px;
+}
+
+#course {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--txt);
+}
+
+#disc {
+    color: var(--disc);
+}
+
+#coupn {
+    color: var(--disc);
+}
+
+.val {
+    font-weight: bold;
+}
+
+.coupn {
+    outline: none !important;
+    border: none !important;
+    color: gray;
+    font-style: none;
+    cursor: pointer;
+}
+
+#headingThree {
+    background-color: transparent;
+    outline: none !important;
+}
+
+.card {
+    border: none;
+    outline: 0px !important;
+}
+
+.razorpay-payment-button {
+    background-color: var(--button) !important;
+    color: white !important;
+    border-radius: 5px !important;
+    border: none !important;
+    outline: none !important;
+    width: 300px !important;
+    height: 50px !important;
+    font-weight: bold !important;
+}
+
+.arrow-down {
+    background: transparent;
+    position: relative;
+}
+
+.arrow-down.active {
+    background: transparent;
+}
+
+.arrow-down:before,
+.arrow-down:after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 3px;
+    background: gray;
+    position: absolute;
+    top: 12px;
+    left: 177px;
+    transition: transform .5s;
+}
+
+.arrow-down:before {
+    left: 170px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transform: rotate(45deg);
+}
+
+.arrow-down:after {
+    right: 10px;
+    transform: rotate(-45deg);
+}
+
+.arrow-down.active:before {
+    transform: rotate(-45deg);
+}
+
+.arrow-down.active:after {
+    transform: rotate(45deg);
+}

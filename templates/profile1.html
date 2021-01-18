@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile Page</title>
+    <link rel = "icon" href = "/static/image/logo_copy.png" 
+        type = "image/x-icon">
+    <!-- Bootstrap CSS CDN -->
+    <script src="https://kit.fontawesome.com/e72f201fc4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="/static/js/jquery.counterup.min.js"></script>
+    <script src="https://kit.fontawesome.com/e72f201fc4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/profile1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="fixed-left">
+            <div class="sidebar-header text-center p-3">
+                <div>
+                    <a href="/">
+                        <img src="/static/image/logo_copy.png" alt="" style="height: 180px;">
+                    </a>
+                    <div class="p-2 text-center">
+                        <p style="color: #0c265f;font-weight: bold;font-size: 19px;">
+                            Your Dream we help to Achive
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-unstyled components">
+                <ul class="nav nav-tabs nav-fill text-left  " id="myTab" role="tablist" style="border:none">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile">Profile</a>
+                    </li><br>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="Achivements-tab" data-toggle="tab" href="#Achivements">Achivements</a>
+                    </li><br>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings"> profile
+                            Settings</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </ul>
+        </nav>
+        <div class="modal fade bd-example-modal-md" id="editprofile" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content varsig" style="background-color: #add8e6;">
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title w-100 font-weight-bold" style="color: #240068;"> Edit my profile </h3>
+                        <a type="button" class="close text-black" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <form name="myform" action="/Profile/user=/{{user.id}}" method="POST" enctype="multipart/form-data" onsubmit="return Validation()">
+                            {%csrf_token%}
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;" >Student Name:</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="name" name='kidname' placeholder="Full Name" autocomplete="off">
+                                        <span id="nameele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" >
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">Kid's Age</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <ul class="donate-now">
+                                            <li>
+                                                <input type="radio" id="Age10-12" name="kid_age"  value='9-12'/>
+                                                <label for="Age10-12">9-12</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="Age13-15" name="kid_age" value='13-15'/>
+                                                <label for="Age13-15">13-15</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="Age16-18" name="kid_age" value='16-18'>
+                                                <label for="Age16-18">16-18</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="Age19-21" name="kid_age" />
+                                                <label for="Age19-21" >19-21</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="Age22+" name="kid_age" value='22+'/>
+                                                <label for="Age22+" value='22+'>22+</label>
+                                            </li>
+                                            <span id="Ageele" class="text-danger font-weigth-bold"></span>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">Address:</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="Address" name='address' placeholder="House no" autocomplete="off">
+                                        <span id="Addressele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">Town/City:</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="Town" name='town' placeholder="Village/City/Town"
+                                            autocomplete="off">
+                                        <span id="Townele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">District:</p>
+                                    </div>
+                                    <div class="col-8 ">
+                                        <input type="text" class="form-control" id="District" name='dist' placeholder="District" autocomplete="off">
+                                        <span id="Districtele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4 text-left">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">State:</p>
+                                    </div>
+                                    <div class="col-8 ">
+                                        <select id="inputState" class="form-control m-0 p-0" name='state'>
+                                            <option selected>Choose...</option>
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                        <span id="Stateele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">Pincode:</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" id="Pincode" class="form-control" name='pincode' placeholder="Pincode">
+                                        <span id="Pincodeele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">Country</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="Town" name='country' placeholder="Country"
+                                            autocomplete="off">
+                                        <span id="Townele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class=" row no-gutters col-lg-8 col-md-12 col-12 offset-lg-2 offset-md-0">
+                                    <div class="col-4">
+                                        <p class="m-0 pt-2" style="font-size: 17px;">School Name</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="Town" name='schoolName' placeholder="School Name"
+                                            autocomplete="off">
+                                        <span id="Townele" class="text-danger font-weigth-bold"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center">
+                                <input class="btn btn-info btn-block mt-2" type="submit" value="Sign up"
+                                style="background-color: orange;font-weight: bold; width: 30%;">
+                            </div>
+                            <!-- Sign up button -->
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-md" id="updateprofilepic" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content varsig" style="background-color: whitesmoke;">
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title w-100 font-weight-bold" style="color: #240068;"> Update profilepic </h3>
+                        <a type="button" class="close text-black" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/profile/{{user.id}}" method='POST' enctype="multipart/form-data">
+                            {%csrf_token%}
+                            <div class="form-row">
+                                <input type="file" class="form-control" id="img" name='photo' onchange="return fileValidation()"
+                                    style="background-color: transparent;">
+                            </div>
+                            <p class="pl-4">Selected photo:</p>
+                            <div class="p-2">
+                                <img src="" id="profile-img-tag" width="300px">
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-12 text-right p-2">
+                                    <input class="btn btn-info btn-blockjus" data-dismiss="modal" value="cancel"
+                                        style="background-color: orange;font-weight: bold; width: 15%;">
+                                    <input class="btn btn-info btn-blockjus" type="submit" value="Update"
+                                        style="background-color: orange;font-weight: bold; width: 15%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <nav class="d-lg-none d-md-block navbar navbar-expand-lg navbar-light" style="background-color: #c1e1ec;">
+                <div class="container-fluid p-lg-2 p-md-1">
+                    <div class=" navbar-nav ">
+                        <a href="home.html"><img src="/static/image/logo_copy.png" alt="" style="height: 70px;"></a>
+
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="#" class="btn center logoutbutton "> Logout</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="profilecontent " style="background-image: url('/static/image/images1.jpg');">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-10 col-md-12 col-12 text-center mt-4 mb-4 offset-lg-1 offset-md-0">
+                        <div class="row no-gutters">
+                            <div class="profilepic text-center col-xl-4 col-lg-4 col-md-3 col-sm-4 col-6 offset-lg-0 offset-md-4 offset-sm-4 offset-3">
+                                {%if profile.photo == 'False' %}
+                                <img src="/static/image/profilepic.png " class=" rounded-circle"
+                                    style="height: 180px; width: 180px;">
+                                
+                                {%else%}
+                                <img src=" {{profile.photo.url}} " class=" rounded-circle"
+                                    style="height: 180px; width: 180px;">
+                                {%endif%}
+                                <a href="#" class="btn updatebutton text-white p-lg-1 p-md-3 p-md p-2" id="updateprofilepic"
+                                    data-toggle="modal" data-target="#updateprofilepic"><i class="fas fa-camera"></i></a>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-sm-12 pt-lg-5 mt-lg-3">
+                                <div class="text-white text-center">
+                                    <p class="font-weight-bold" style="font-size:40px;color:white">{{user.username}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs nav-fill d-lg-none ml-md-5 " id="myTab" role="tablist">
+                        <li class=" acnav-item" role="presentation">
+                            <a class="nav-link active p-2" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">Profile</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="Achivements-tab" data-toggle="tab" href="#Achivements" role="tab"
+                                aria-controls="Achivements" aria-selected="true">Achivements</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab"
+                                aria-controls="settings" aria-selected="false">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-light">
+                <div class="tab-content">
+                    <div class="tab-pane " id="profile" role="tabpanel" aria-labelledby="profile-tab"
+                        style="background-color: rgb(233, 224, 208); height: 100%;">
+                        <div class="row no-gutters p-4">
+                            <div class="col-xl-9 col-lg-12 col-md-12 col-sm-7 col-10 offset-md-0 offset-1">
+                                {%for course in course%}
+                                <div class="row no-gutters mb-3" style="background-color: #c1e1ec;border-radius: 10px;">
+                                    <div class=" center col-lg-2 col-md-2 col-sm-12 col-12 m-0 p-0">
+                                        <p class="text-center m-o p-0" style="font-size: 80px; font-weight: bold;font-style: italic;
+                                                color: #f9b920;">
+                                            {{course.courseName|make_list|first}}</p>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                        <div class="p-3">
+                                            <div class="m-0">
+                                                <p class="font-weight-bold p-0 m-0" style="font-size: 30px;">{{course.courseName}}</p>
+                                                <div class="row no-gutters">
+                                                    <div class="col-xl-3 col-lg-3 col-sm-4 col-md-3 col-5">
+                                                        Tutor Name:
+                                                    </div>
+                                                    <div class="col-7">
+                                                        Dunuka Mani
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters pt-2">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <p>number of classes completed: 4</p>
+
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <p>number of classes remaining: 5</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="center col-lg-2 col-md-2 col-sm-12 col-12 p-3">
+                                        <button onclick="window.location.href='feedback/{{course.id}}'" class="viewcourse3 shadow-lg  rounded "
+                                            style="text-decoration: none;padding: 10px 25px;">View</button>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                <div class="row no-gutters p-4 mb-3" style="background-color: #c1e1ec;border-radius: 10px;">
+                                    None
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4 col-3 d-xl-block d-lg-none d-sm-block d-md-none d-none">
+                                <p class="m-3 text-black font-weight-bold" style="font-size: 20px;">Recommended Courses </p>
+                                {%for course in recom%}
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                {{course.courseName|make_list|first}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                {{course.courseName}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="Achivements" role="tabpanel" aria-labelledby="Achivements-tab"
+                        style="background-color: rgb(233, 224, 208); height: 100%;">
+                        <div class="row no-gutters p-4">
+                            <div class="col-xl-9 col-lg-8 col-md-8 col-sm-7 col-10 offset-md-0 offset-1">
+                                <div class="row no-gutters mb-3" style="background-color: #c1e1ec;border-radius: 10px;">
+                                    <div class="col-lg-8 col-md-8 col-sm-7 col-12">
+                                        <div class="p-4">
+                                            <div class="m-0">
+                                                <p class="font-weight-bold p-0 m-0 text-center"
+                                                    style="font-size: 25px;">Python with
+                                                    data
+                                                    Science</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="center col-lg-4 col-md-4 col-sm-5 col-12 p-3">
+                                        <button class="viewcourse3 shadow-lg  rounded "
+                                            style="text-decoration: none;">View Certificate</button>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters p-4 mb-3" style="background-color: #c1e1ec;border-radius: 10px;">
+                                    None
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 d-xl-block d-lg-block d-md-block d-sm-block d-none">
+                                <p class="m-3 text-black font-weight-bold" style="font-size: 20px;">Recommended Courses </p>
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                P</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                Python
+                                                with
+                                                data Science</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                P</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                Python
+                                                with
+                                                data Science</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="settings" role="tabpanel" aria-labelledby="settings-tab"
+                        style="background-color: rgb(233, 224, 208); height: 100%;">
+                        <div class="row no-gutters p-4">
+                            <div class="col-xl-9 col-lg-8 col-md-8 col-sm-8 col-12">
+                                <div class="info p-4 bg-light">
+                                    <div class="Basic ">
+                                        <div class="row">
+                                            <div class="col-12 pb-2">
+                                                <h2>Basic Information</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                User Name:
+                                            </div>
+                                            <div class="col-lg-6 col-md-8 col-12">
+                                                {{user.username}}
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                User Email:
+                                            </div>
+                                            <div class="col-lg-7 col-md-8 col-12 " style="overflow:auto;">
+                                                {{user.email}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-4 mb-4">
+                                    <div class="Personal">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-8 col-9 pb-2">
+                                                <h2>Personal Data</h2>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-3 pt-2 pl-1 text-right">
+                                                <a href="#" class="text-success" id="signupp" data-toggle="modal"
+                                                    data-target="#editprofile"> Edit</a>
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                Student Name:
+                                            </div>
+                                            <div class="col-lg-7 col-md-8 col-12">
+                                                {{user.username}}
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                Phone.no:
+                                            </div>
+                                            <div class="col-lg-6 col-md-8 col-12">
+                                                {{user.phonenumber}}
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                Grade:
+                                            </div>
+                                            <div class="col-lg-6 col-md-8 col-12">
+                                                {{profile.kid_age}}
+                                            </div>
+                                        </div>
+                                        <div class="row opacity">
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                Address:
+                                            </div>
+                                            <div class="col-lg-6 col-md-8 col-12">
+                                                Hno:1-3-13,<br>Suryapet,Suryapet(Dist),<br>Telangana,508213
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 d-xl-block d-lg-block d-md-block d-sm-block d-none">
+                                <p class="m-3 text-black font-weight-bold" style="font-size: 20px;">Recommended Courses </p>
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                P</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                Python
+                                                with
+                                                data Science</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                P</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                Python
+                                                with
+                                                data Science</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="m-3 p-2 bg-white rounded shadow-lg ">
+                                    <a href="#">
+                                        <div>
+                                            <p class="text-center m-0" style="font-size: 60px; font-weight: bold;font-style: italic;
+                                                    color: #f9b920;">
+                                                P</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-center font-weight-bold p-0 m-0" style="font-size: 20px;">
+                                                Python
+                                                with
+                                                data Science</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script>
+        $(function () {
+            $('#myTab a:first').tab('show')
+        });
+    </script>
+    <script type="text/javascript">
+    function Validation() {
+        console.log('mahi')
+        var Ag1 = document.getElementById('Age10-12');
+        var Ag2 = document.getElementById('Age13-15');
+        var Ag3 = document.getElementById('Age16-18');
+        var Ag4 = document.getElementById('Age19-21');
+        var Ag5 = document.getElementById('Age22+');
+
+        if (Ag1.checked == false && Ag2.checked == false && Ag3.checked == false && Ag4.checked == false && Ag5.checked == false) {
+            document.getElementById('Ageele').innerHTML = "select  your age group";
+            return false;
+        }
+        else {
+            document.getElementById('Ageele').innerHTML = "";
+            true;
+        }
+    }
+        function fileValidation() { 
+            var fileInput =  
+                document.getElementById('img'); 
+              
+            var filePath = fileInput.value; 
+          
+            // Allowing file type 
+            var allowedExtensions =  
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+              
+            if (!allowedExtensions.exec(filePath)) { 
+                alert('Invalid file type'); 
+                fileInput.value = ''; 
+                return false; 
+            }  else{
+                return true;
+            }
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profile-img-tag').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#img").change(function () {
+            readURL(this);
+        });
+    </script>
+    <!-- <script>
+        function Validation() {
+            console.log('mahi')
+            var name = document.getElementById('name').value;
+            var mobile = document.getElementById('mobile').value;
+            var Ag1 = document.getElementById('Age10-12');
+            var Ag2 = document.getElementById('Age13-15');
+            var Ag3 = document.getElementById('Age16-18');
+            var Ag4 = document.getElementById('Age19-21');
+            var Ag5 = document.getElementById('Age22+');
+            var Address = document.getElementById("Address").value;
+            var Town = document.getElementById('Town').value;
+            var District = document.getElementById('District').value;
+            var State = document.getElementById('inputState').value;
+            var Pincode = document.getElementById('Pincode').value;
+            //parent name validation
+            // if (name == "") {
+            //     document.getElementById('nameele').innerHTML = "please enter your name";
+            //     return false;
+            // } else if (!(/^[a-z A-Z ]{3,30}$/).test(name)) {
+            //     document.getElementById('nameele').innerHTML = "Name should have only alphabets with atleast 3 characters ";
+            //     return false;
+
+            // } else {
+            //     document.getElementById('nameele').innerHTML = " ";
+            //     true;
+            // }
+
+            // //mobile validation
+            // if (mobile == "") {
+            //     document.getElementById('mobileele').innerHTML = "please enter your name";
+            //     return false;
+            // } else if ((!(/^[7-9]\d{9}$/).test(mobile))) {
+            //     document.getElementById('mobileele').innerHTML = "Invalid,should consist of 10 numbers";
+            //     return false;
+            // } else {
+            //     document.getElementById('mobileele').innerHTML = "";
+            //     true;
+            // }
+
+            //Age valiadation
+            if (Ag1.checked == false && Ag2.checked == false && Ag3.checked == false && Ag4.checked == false && Ag5.checked == false) {
+                document.getElementById('Ageele').innerHTML = "select  your age group";
+                return false;
+            }
+            else {
+                document.getElementById('Ageele').innerHTML = "";
+                true;
+            }
+            //address validation
+            // if (Address == "" || Address.length>=14) {
+            //     document.getElementById('Addressele').innerHTML = "please enter house number and max leangth is 14";
+            //     return false;
+            // } else {
+            //     document.getElementById('Addressele').innerHTML = " ";
+            //     true;
+            // }
+
+            // //town validation
+            // if (Town == "") {
+            //     document.getElementById('Townele').innerHTML = "please enter village/town/city";
+            //     return false;
+            // } else {
+            //     document.getElementById('Townele').innerHTML = " ";
+            //     true;
+            // }
+            // // district validation
+            // if (District == "") {
+            //     document.getElementById('Districtele').innerHTML = "please enter District";
+            //     return false;
+            // } else {
+            //     document.getElementById('Districtele').innerHTML = " ";
+            //     true;
+            // }
+            // //state validation
+            // if (State == "Choose...") {
+            //     document.getElementById('Stateele').innerHTML = "please select your state";
+            //     return false;
+            // } else {
+            //     document.getElementById('Stateele').innerHTML = " ";
+            //     true;
+            // }
+            // //Pincode validation
+            // if (Pincode == "") {
+            //     document.getElementById('Pincodeele').innerHTML = "please enter pinocde code";
+            //     return false;
+            // } else if ((!(/^\d{6}$/).test(Pincode))) {
+            //     document.getElementById('Pincodeele').innerHTML = "Invalid,Pincode must have 6 digits";
+            //     return false;
+            // } else {
+            //     document.getElementById('Pincodeele').innerHTML = "";
+            //     true;
+            // }
+
+            // //password validation
+            // // /^[A-Za-z0-9@#*&]\w{7,14}\d{1,4}$/
+            // if (Pass == "") {
+            //     document.getElementById('passele').innerHTML = "please enter password";
+            //     return false;
+            // } else if (!((/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/)).test(Pass)) {
+            //     document.getElementById('passele').innerHTML = "Invalid password";
+            //     return false;
+            // } else {
+            //     document.getElementById('passele').innerHTML = "";
+            //     true;
+            // }
+        }
+    </script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+</html>

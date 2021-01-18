@@ -1,0 +1,142 @@
+:root {
+    --lg: 0% !important;
+}
+
+.box {
+    width: 100%;
+    height: 50vh;
+    /*background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+*/
+}
+
+.box .r-box {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    display: inline-block;
+    bottom: var(--lg);
+    left: 0%;
+    animation: animate 4s linear infinite;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 15px;
+    opacity: 0.5;
+}
+
+.box .r-box:nth-child(1) {
+    bottom: var(--lg) !important;
+    left: 20%;
+    display: inline-block;
+    animation: animate 8s linear infinite;
+}
+
+.box .r-box:nth-child(2) {
+    bottom: var(--lg);
+    left: 79%;
+    animation: animate 10s linear infinite;
+}
+
+.box .r-box:nth-child(3) {
+    bottom: var(--lg);
+    left: 90%;
+    animation: animate 8s linear infinite;
+}
+
+.box .r-box:nth-child(4) {
+    bottom: var(--lg);
+    left: 65%;
+    animation: animate 7s linear infinite;
+}
+
+.box .r-box:nth-child(5) {
+    bottom: var(--lg);
+    left: 10%;
+    animation: animate 9s linear infinite;
+}
+
+.box .r-box:nth-child(6) {
+    bottom: var(--lg);
+    left: 60%;
+    animation: animate 5s linear infinite;
+}
+
+.box .r-box:nth-child(7) {
+    bottom: var(--lg);
+    left: 33%;
+    animation: animate 8s linear infinite;
+}
+
+.box .r-box:nth-child(8) {
+    bottom: var(--lg);
+    left: 40%;
+    animation: animate 10s linear infinite;
+}
+
+.box .r-box:nth-child(9) {
+    bottom: var(--lg);
+    left: 50%;
+    animation: animate 6s linear infinite;
+}
+
+.box .r-box:nth-child(10) {
+    bottom: var(--lg);
+    left: 7%;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(50deg);
+    }
+    100% {
+        transform: scale(1.6) translateY(-130px) rotate(360deg);
+    }
+}
+
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.footer {
+    margin: 0;
+    padding: 0;
+}
+
+.footershortcut {
+    color: white;
+    font-size: 18px;
+}
+
+.footershortcut:hover {
+    color: white;
+}

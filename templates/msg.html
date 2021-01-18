@@ -1,0 +1,122 @@
+<html>
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+	<link href="/static/css/msg.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/navbar.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/banner.css" media="screen"/>
+
+</head>
+<body >
+  <nav class="navbar navbar-expand-lg shadow fixed-top" style=" background-color: white;border-bottom: 1px solid white ">
+        <a href="/" class="navbar-brand">
+            <img src="/static/image/logo_copy.png" class="image-fluid text-white" alt="" style="height: 65px; ">
+        </a>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span style="color: #0c265f;"><i class="fas fa-bars fa-2x"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between ml-n1" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="mx-3 nav-item nav-link icons ">Vision</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle icons mx-3 " data-toggle="dropdown" style="color: #0c265f;">Courses</a>
+                    <div class="dropdown-menu" style="border-radius: 10px; ">
+
+
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #9fa8da" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        9-12
+                                        <p style="font-size:9px;margin-top: -7px; margin-left: 10px" class="truncate">
+                                            Age</p>
+                                    </div>
+                                </div>
+                                <a href="https://css-tricks.com/creating-clickable-divs/" style="text-decoration: none; color: black;">
+
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Beginner (Grade 5-7)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #81d4fa;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        12-14
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12x" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="https://css-tricks.com/creating-clickable-divs/" style="text-decoration: none; color: black;">
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Intermediate (Grade 8-10)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #fff59d;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 8px;">
+                                        15-17+
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12px" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="https://css-tricks.com/creating-clickable-divs/" style="text-decoration: none; color: black;">
+
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Advanced (Grade 11+)
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="nav-item nav-link  icons mx-3 ">Community</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item nav-link  icons mx-3 ">Career</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        
+        
+<div class="container">
+<h3 class="heading text-center">My Messege</h3>
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="mesgs">
+          <div class="msg_history">
+            {%for m in msg%}
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg"><p><b>{{m.TrainerId}}</b></p>
+                  <p>{{m.Text}}</p>
+                  <span class="time_date"> {{m.date}}</span></div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <div class="credit text-center">
+    
+  </div>
+  </body>
+    </html>

@@ -1,0 +1,221 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(233, 224, 208);
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background-color: rgb(76, 173, 97);
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* --SIDEBAR STYLE---*/
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #213c77;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #c1e1ec;
+}
+
+#sidebar ul.components {
+    border-radius: 0px;
+    border-bottom: 1px solid #47748b;
+}
+#sidebar ul li a {
+    padding: 20px;
+    font-size: 1.1em;
+    display: block;
+    border-radius: 0px;
+}
+
+#sidebar ul li a:hover {
+    color: #0c265f;
+    background: #fff;
+    border-radius: 0px;
+
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #0c265f;
+    font-weight: bold;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+/* ---MOdal--- */
+.varsig{
+    background-color: white;
+    border-radius: 15px;
+}
+/* ---CONTENT STYLE--- */
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+/* ---MEDIAQUERIES--- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+.logoutbutton{
+    padding: 10px 20px ;
+    background-color: yellow;
+    border-radius: 30px;
+    color: rgb(109, 8, 109);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+}
+.updatebutton{
+    background-color:transparent;
+    border-radius: 5px;
+    font-size: 30px;
+    color: black;
+    border: none;
+}
+.profilepic { position: relative; }
+.profilepic img { display: block; }
+.profilepic .fa-camera { position: absolute; bottom:25px; right:20px; }
+.profilecontent{
+    padding: 40px 20px 0px 20px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.viewcourse3 {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f9b920;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0;
+    text-decoration: none;
+}
+.info{
+    margin: 20px;
+}
+.opacity{
+    opacity: 0.5;
+    padding: 5px;
+}
+/* ---Edit profile--- */
+.form-row{
+    margin: 15px;
+}
+.close{
+    font-size: 30px;
+    border: none;
+}
+.info{
+    border-radius: 8px;
+}
+.donate-now {
+    list-style-type: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+  }
+  .donate-now li {
+    float: left;
+    width: 55px;
+    height: 45px;
+    position: relative;
+    margin-right: 8px;
+  }
+  .donate-now label,
+  .donate-now input {
+    text-align:center;
+    justify-content: center;
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+  }
+  .donate-now input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+  .donate-now input[type="radio"]:checked+label,
+  .Checked+label {
+    background: green;
+    color:white;
+  }
+  .donate-now label {
+    padding: 5px;
+    border: 1px solid #CCC;
+    
+    background:rgb(233, 224, 208);
+    cursor: pointer;
+    z-index: 90;
+  }
+

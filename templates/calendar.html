@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- this line tell us the responsive grid sys-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+ -->
+ <script src="https://kit.fontawesome.com/e72f201fc4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/calendar.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <style>
+        #date {
+            color: #7194bb;
+            border: 1px solid #7194bb;
+            border-radius: 5px;
+            width: 70px;
+        }
+        
+        .liveButton {
+            border-radius: 12px;
+            margin-right: 10px;
+            color: orangered;
+            animation: blinking 1.5s linear infinite;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow fixed-top" style=" background-color: white;border-bottom: 1px solid white ">
+        <a href="/" class="navbar-brand">
+            <img src="/static/image/logo_copy.png" class="image-fluid text-white" alt="" style="height: 65px; ">
+        </a>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span style="color: #0c265f;"><i class="fas fa-bars fa-2x"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between ml-n1" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li>
+                    <a href="/jvt/vision" class="mx-3 nav-item nav-link icons ">Vision</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle icons mx-3 " data-toggle="dropdown" style="color: #0c265f;">Courses</a>
+                    <div class="dropdown-menu" style="border-radius: 10px; ">
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #9fa8da" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        9-12
+                                        <p style="font-size:9px;margin-top: -7px; margin-left: 10px" class="truncate">
+                                            Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/9" style="text-decoration: none; color: black;">
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Beginner (Grade 5-7)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #81d4fa;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        12-14
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12x" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/12" style="text-decoration: none; color: black;">
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Intermediate (Grade 8-10)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #fff59d;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 8px;">
+                                        15+
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12px" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/15" style="text-decoration: none; color: black;">
+
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Advanced (Grade 11+)
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li>
+                    <a href="/Jvt/welcome/Community" class="nav-item nav-link  icons mx-3 ">Community</a>
+                </li>
+                <li>
+                    <a href="/Jvt/Careers" class="nav-item nav-link  icons mx-3 ">Career</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+    <div class="container-fluid my-5 mt-5" style="background: white">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-lg-6 col-md-12 my-5 shadow" style=" border-radius: 25px; border: 1px solid#7194bb">
+                <h2 class="mt-5 mb-3 text-center font-weight-bold " style="color: #7194bb">Start your free trail</h2>
+                {% for messages in messages%}
+                                <h5 style="color:red;">{{messages}}</h5>
+                            {%endfor%}
+                <h6 class="text-center" style="color: red">only 19 spots left!</h6>
+                <h6 class="text-right" style="color: #7194bb">Timezome</h6>
+                <form action="/course/Democlass/done" method="POST">
+                    {%csrf_token%}
+                    <div class="text-right w-50 ml-auto">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="background-color: whitesmoke; color:#7194bb;">
+                      <option selected>Indian Standard Time (IST)</option>
+                      <option value="1">Atlantic Standard Time (AST)</option>
+                      <option value="2">Eastern Standard Time (EST)</option>
+                      <option value="3">Canadian Standard Time (CST)</option>
+                    </select>
+
+
+                    </div>
+
+                    <div class="mt-5">
+                        <div class="mt-3" style="color: #7194bb"> <b> Pick a date</b> </div>
+                        <div class="form-row">
+                            <ul class="donate-now">
+                                <li>
+                                    <input type="radio" id="today" value="{{day1}}" name="date">
+                                    <label for="today" id="date">{{month}} {{day1}}</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="tommorow" value="{{day2}}" name="date">
+                                    <label for="tommorow" id="date">{{month}} {{day2}}</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="dayaftertom" value="{{day3}}" name="date">
+                                    <label for="dayaftertom" id="date">{{month}} {{day3}}</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="mt-3" style="color: #7194bb"><b> Select Slot on 27 sep 2020</b></div>
+                    <div class="form-row mb-2">
+                        <ul class="donate-now">
+                            <li>
+                                <input type="radio" id="9am" name="Grade" value="9am">
+                                <label for="9am" id="date">9.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="10am" name="Grade" value="10am">
+                                <label for="10am" id="date">10.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="11am" name="Grade" value="11am">
+                                <label for="11am" id="date">11.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="12pm" name="Grade" value="12pm" />
+                                <label for="12pm" id="date">12.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="1pm" name="Grade" value="1pm">
+                                <label for="1pm" id="date">1.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="2pm" name="Grade" value="2pm">
+                                <label for="2pm" id="date">2.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="3pm" name="Grade" value="3pm">
+                                <label for="3pm" id="date">3.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="4pm" name="Grade" value="4pm">
+                                <label for="4pm" id="date">4.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="5pm" name="Grade" value="5pm">
+                                <label for="5pm" id="date">5.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="6pm" name="Grade" value="6pm">
+                                <label for="6pm" id="date">6.00 pm</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mainDiv  justify-content-center text-center">
+
+                        <p class="mt-3 liveButton">Hurry Up!, Slots are filling fast, Booking now and get free class</p>
+                        <div class="text-center my-5"><button type="submit" class="btn  px-5" style="background-color: #77a6f7;">Conforming Now</button></div>
+                    </div>
+            </div>
+
+
+
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

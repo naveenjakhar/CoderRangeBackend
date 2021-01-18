@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- this line tell us the responsive grid sys-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+ -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ <link rel="stylesheet" href="/static/css/claendar.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-lg-6 col-md-12 my-5 shadow" style="background-color: lightcyan;border-radius: 30px;" >
+                <h2 class="mt-5 mb-3 text-center font-weight-bold">Start your free trail</h2>
+                <h6 class="text-center" style="color: #77a6f7;">only 19 spots left!</h6>
+                <h6 class="text-right">Timezome</h6>
+               <!--    <div class="dropdown text-right">
+                    <button class="dropdown-toggle" data-toggle="dropdown">Dropdown Example</button>
+                    <ul class="dropdown-menu">
+                      <li>Indian Standard Time (IST)</li>
+                      <li>Atlantic Standard Time (AST)</li>
+                      <li>Eastern Standard Time (EST)</li>
+                    </ul>
+                </div> --> 
+                <form action="">
+                   <div class="text-right">
+                    <label for="stime"></label>
+                    <select id="stime" name="stime">
+                      <option value="volvo">Indian Standard Time (IST)</option>
+                      <option value="saab">Atlantic Standard Time (AST)</option>
+                      <option value="fiat">Eastern Standard Time (EST)</option>
+                      <option value="audi">Canadian Standard Time (CST)</option>
+                    </select>
+                  </div>
+                <div class="">
+                <div class="mt-5">
+                  <div class="mt-3"> Select Slot </div>
+                  <ul class="nav nav-pills mb-3 ml-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active text-dark"  id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><span id="one"> </span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span id="two"> </span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><span id="three"> </span></a>
+                    </li>
+                  </ul>
+                </div>
+                 </div>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="mt-3"> Select Slot on <span id="one1"> </span></div>
+                    <div class="form-row mb-2">
+                        <ul class="donate-now">
+                            <li>
+                                <input type="radio" id="9am" name="Grade" />
+                                <label for="9am">9.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="10am" name="Grade">
+                                <label for="10am">10.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="11am" name="Grade" />
+                                <label for="11am">11.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="12pm" name="Grade" />
+                                <label for="12pm">12.00 pm</label>
+                            </li>
+                            <li>
+                              <input type="radio" id="1pm" name="Grade" />
+                              <label for="1pm">1.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="2pm" name="Grade">
+                              <label for="2pm">2.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="3pm" name="Grade" />
+                              <label for="3pm">3.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="4pm" name="Grade" />
+                              <label for="4pm">4.00 pm</label>
+                          </li>
+                          <li>
+                            <input type="radio" id="5pm" name="Grade">
+                            <label for="5pm">5.00 pm</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="6pm" name="Grade" />
+                            <label for="6pm">6.00 pm</label>
+                        </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="mt-3"> Select Slot on <span id="two2"></span> </div>
+                    <div class="form-row mb-2">
+                        <ul class="donate-now">
+                            <li>
+                                <input type="radio" id="9am1" name="Grade" />
+                                <label for="9am1">9.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="10am1" name="Grade">
+                                <label for="10am1">10.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="11am1" name="Grade" />
+                                <label for="11am1">11.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="12pm1" name="Grade" />
+                                <label for="12pm1">12.00 pm</label>
+                            </li>
+                            <li>
+                              <input type="radio" id="1pm1" name="Grade" />
+                              <label for="1pm1">1.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="2pm1" name="Grade">
+                              <label for="2pm1">2.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="3pm1" name="Grade" />
+                              <label for="3pm1">3.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="4pm1" name="Grade" />
+                              <label for="4pm1">4.00 pm</label>
+                          </li>
+                          <li>
+                            <input type="radio" id="5pm1" name="Grade">
+                            <label for="5pm1">5.00 pm</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="6pm1" name="Grade" />
+                            <label for="6pm1">6.00 pm</label>
+                        </li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="mt-3"> Select Slot on <span id="three3"> </span></div>
+                    <div class="form-row mb-2">
+                        <ul class="donate-now">
+                            <li>
+                                <input type="radio" id="9am2" name="Grade" />
+                                <label for="9am2">9.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="10am2" name="Grade">
+                                <label for="10am2">10.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="11am2" name="Grade" />
+                                <label for="11am2">11.00 am</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="12pm2" name="Grade" />
+                                <label for="12pm2">12.00 pm</label>
+                            </li>
+                            <li>
+                              <input type="radio" id="1pm2" name="Grade" />
+                              <label for="1pm2">1.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="2pm2" name="Grade">
+                              <label for="2pm2">2.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="3pm2" name="Grade" />
+                                <label for="3pm2">3.00 pm</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="4pm2" name="Grade" />
+                                <label for="4pm2">4.00 pm</label>
+                            </li>
+                            <li>
+                              <input type="radio" id="5pm2" name="Grade">
+                              <label for="5pm2">5.00 pm</label>
+                          </li>
+                          <li>
+                              <input type="radio" id="6pm2" name="Grade" />
+                              <label for="6pm2">6.00 pm</label>
+                          </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="mt-3" style="background-color: #FFB48F;">Hurry Up!, Slots are filling fast, Booking now and get free class</h5>
+                 <div class="text-center my-5"><button type="submit" class="btn  px-5" style="background-color: #77a6f7;">Conforming Now</button></div> 
+                      
+                </form>
+              </div>
+              <div class="col-3"></div>
+          </div>
+      </div>
+  
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
+  
+  
+  
+  <script>
+  
+  var options = {  year: 'numeric', month: 'short', day: 'numeric' };
+  var today  = new Date();
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var dayaftertomorrow = new Date();
+  dayaftertomorrow.setDate(dayaftertomorrow.getDate() + 2);
+  document.getElementById("one").innerHTML=today.toLocaleDateString("en-US",options);
+  document.getElementById("one1").innerHTML=today.toLocaleDateString("en-US",options);
+  document.getElementById("two2").innerHTML=tomorrow.toLocaleDateString("en-US",options);
+  document.getElementById("three3").innerHTML=dayaftertomorrow.toLocaleDateString("en-US",options);
+  document.getElementById("two").innerHTML=tomorrow.toLocaleDateString("en-US",options);
+  document.getElementById("three").innerHTML=dayaftertomorrow.toLocaleDateString("en-US",options);
+  
+  </script>
+  
+  </body>
+  </html>

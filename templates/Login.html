@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/e72f201fc4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/Login.css" media="screen" /> -->
+    <link rel="stylesheet" href="/static/css/banner_upd.css">
+    <link rel="stylesheet" href="/static/css/home_upd1.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg shadow fixed-top"
+        style=" background-color: white;border-bottom: 1px solid white ">
+        <a href="/" class="navbar-brand">
+            <img src="/static/image/logo_copy.png" class="image-fluid text-white" alt="" style="height: 70px; ">
+        </a>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span style="color: #0c265f;"><i class="fas fa-bars fa-2x"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between ml-n1" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li>
+                    <a href="/jvt/vision" class="mx-3 nav-item nav-link icons ">Vision</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle icons mx-3 " data-toggle="dropdown" style="color: #0c265f;">Courses</a>
+                    <div class="dropdown-menu" style="border-radius: 10px; ">
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #9fa8da" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        9-12
+                                        <p style="font-size:9px;margin-top: -7px; margin-left: 10px" class="truncate">
+                                            Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/9" style="text-decoration: none; color: black;">
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Beginner (Grade 5-7)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #81d4fa;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 12px;">
+                                        12-14
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12x" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/12" style="text-decoration: none; color: black;">
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Intermediate (Grade 8-10)
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-item ">
+                            <li style="list-style: none;" class="d-flex ml-n3">
+                                <div style="border-color:#777;border-style:solid;border-width:1px;height:40px;width:70px;background-color: #fff59d;" class="center-align cyan lighten-3 black-text">
+                                    <div style="margin:0;margin-top:2px;font-size:20px;font-weight:600;margin-left: 8px;">
+                                        15+
+                                        <p style="font-size:9px;margin-top: -7px;margin-left: 12px" class="truncate">Age</p>
+                                    </div>
+                                </div>
+                                <a href="/course/15" style="text-decoration: none; color: black;">
+
+                                    <div class="justify-content-center text-center ml-3 mt-2">
+                                        Advanced (Grade 11+)
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li>
+                    <a href="/Jvt/welcome/Community" class="nav-item nav-link  icons mx-3 ">Community</a>
+                </li>
+                <li>
+                    <a href="/Jvt/Careers" class="nav-item nav-link  icons mx-3 ">Career</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-4 ml-lg-n3 ml-xl-0 ">
+                <li>
+                    <a href="#" class=" btn mr-5 badge-pill px-5 nav-item  nav-link  icons " id="signupp"
+                        data-toggle="modal" data-target="#Signup">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="modal fade bd-example-modal-lg" id="Signup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content varsig">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold text-white"> Create Your Own Account </h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row ">
+                        <a class="mb-2 col-lg-6 col-md-12 col-12 text-center text-decoration-none" href="/Signup/Student">
+                            <div class="student">
+                                <h3 class="font-weight-bold text-primary"> Student</h3>
+                                <p class="parafont">Create anything you imagine by learning to build with code.</p>
+                                <img src="/static/image/1-removebg.png" alt="" style="width: 180px;">
+                            </div>
+                        </a>
+                        <a class=" col-lg-6 col-md-12 col-12 text-center text-decoration-none" href="/Signup/Parent">
+                            <div class="parent">
+                                <h3 class="font-weight-bold text-primary"> Parents</h3>
+                                <p class="parafont">Lets Make Your To Learn Coding In A Esay Way.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer  justify-content-center">
+                    <div class="text-center text-white">
+                        Already Have An Account
+                        <a class="text-white font-weight-bold" href="#">Login</a><br>
+                        <a class="text-white text-center" href="#">privacy policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" style="background-color: #0c265f;margin-top: 75px;">
+        <div class=" container">
+            <div class="row no-gutters pt-4 pb-3">
+                <div class="left col-xl-8 col-lg-8 col-md-7 col-12 d-md-block  d-none pt-lg-3 pt-md-5 justify-content-center"
+                    style="color:white;">
+                    <h2 class="p-lg-4 p-md-0 text-left">You dream, and we help you to make it real, let we both will be a part of innovation.</h2>
+                    <div class="p-2">
+                        <div class="row no-gutters">
+                            <div class="col-lg-2 col-md-2 col-3 justify-content-center pt-2">
+                                <img src="/static/image/live.png" style="width: 50px;">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-9 justify-content-center pt-2">
+                                <h4>Top Trending Courses</h4>
+                                <div class="d-lg-block d-md-none d-none">
+                                    <p class="sigleft">Our aim to make Student Confident and 100% Practicable in their
+                                        respective interested technology domain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-lg-2 col-md-2 col-3 justify-content-center pt-2">
+                                <img src="/static/image/secure.png" style="width: 50px;">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-9 justify-content-center pt-2">
+                                <h4>100% Satisfied Parents</h4>
+                                <div class="d-lg-block d-md-none d-none ">
+                                    <p class="sigleft">All of our student's parents are happy from us, they have seen
+                                        their children progress from zero
+                                        goal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-lg-2 col-md-2 col-3 justify-content-center pt-2">
+                                <img src="/static/image/prac.png" style="width: 50px;">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-9 justify-content-center pt-2">
+                                <h4>Qualified Teaching faculty</h4>
+                                <div class="d-lg-block d-md-none d-none">
+                                    <p class="sigleft">Our faculty are well experienced and have great knowledge to learn
+                                        your child in a easy way.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-lg-2 col-md-2 col-3 justify-content-center pt-2">
+                                <img src="/static/image/oneroof.jfif" style="width: 50px;">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-9 justify-content-center pt-2">
+                                <h4>Life long Membership</h4>
+                                <div class="d-lg-block d-md-none d-non">
+                                    <p class="sigleft">You will enjoy coding like a game while learning and upgrading
+                                        your skills with our smiling.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="right col-xl-4 col-lg-4 col-md-5 my-5 col-sm-10 col-10 justify-content-center offset-md-0 offset-sm-1 offset-1">
+                    <form action="/account/login" class="Lform bg-white p-4" method="POST">
+                        {%csrf_token%}
+                        <div>
+                            <h4 class="logo text-center font-weight-bold" style="color: #240068 ;">Login into Your
+                                Account</h4>
+                            {% for messages in messages%}
+                                <h5 style="color:red;">{{messages}}</h5>
+                            {%endfor%}
+                            <div class="form-row ">
+                                <p class="m-0 p-0" style="font-size: 18px;">Email</p>
+                                <input type="Email" id="Lemail" class="form-control mb-4" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-row">
+                                <p class="m-0 p-0" style="font-size: 18px;">Password</p>
+                                <input type="password" id="Lpass" class="form-control mb-4" name="password" placeholder="Password"
+                                    required>
+                            </div>
+                            <div class="form-row">
+                                <a href="/forgot/password/number">Forget Password</a>
+                            </div>
+                            <!-- Sign up button -->
+                            <button class="btn btn-info my-4 btn-block" style="background-color: orange;"
+                                type="submit">Login</button>
+                        </div>
+                        <div class=" text-center">
+                            What to Create a Account?
+                            <a class="ml-2" data-dismiss="modal" data-toggle="modal" href="/">Signup</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <div class="container-fluid" style="background:#05001d">
+        <div style="position: relative; bottom: 0px;">
+            <div class="box" style="height: auto">
+                <div class="r-box   ">
+                </div>
+                <div class="r-box ">
+                </div>
+                <div class="r-box  d-lg-block d-md-none d-sm-none d-none p-0 ">
+                </div>
+                <div class="r-box d-lg-block d-md-none d-sm-none d-none p-0 ">
+                </div>
+                <div class=" ">
+                </div>
+                <div class="r-box d-lg-block d-md-none d-sm-none d-none p-0 ">
+                </div>
+                <div class="r-box d-lg-block d-md-none d-sm-none d-none p-0  ">
+                </div>
+                <div class="r-box ">
+                </div>
+                <div class="r-box  ">
+                </div>
+                <div class="r-box  ">
+                </div>
+                <div class="row no-gutters mt-5 ">
+                    <div class="col-lg-3 d-lg-block d-md-none d-sm-none d-none p-0  "
+                        style="border-right:1px solid transparent ;">
+                        <ul class="p-4 mt-3" style="list-style-type:none; margin-left: 60px;  ">
+                            <li class="m-2 ">
+                                <a href="/jvt/vision'" class="footershortcut ">Vision</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="/Jvt/Careers" class="footershortcut ">Careers</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="/Jvt/welcome/Community" class="footershortcut ">Community</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="# " class="footershortcut ">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-0 m-0 mt-3"
+                        style="border-right:1px solid transparent ; ">
+                        <ul class="p-4 " style="list-style-type:none;  ">
+                            <li class="m-2 ">
+                                <a href="# " class="footershortcut ">Admission policy</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="# " class="footershortcut ">online application</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="# " class="footershortcut ">site feedback</a>
+                            </li>
+                            <li class="m-2 ">
+                                <a href="# " class="footershortcut ">Request a call back</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 ">
+                        <div class="p-3 ">
+                            <h4 class="text-white text-center ">Need help ?</h4>
+                            <div class="row text-white ml-5   ">
+
+                                <div class="col text-white  ">
+
+                                    <div>
+                                        <i class="far fa-envelope" style="color: white"></i>
+                                        <a class="text-white ml-2 " href="!# ">abcdefgh@gmail.com</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row text-white ml-5   ">
+
+                                <div class="col text-white  ">
+
+                                    <div>
+                                        <i class="fas fa-mobile-alt" style="color: white"></i>
+
+                                        <a class="text-white ml-2 " href="!# ">+91 7009851021</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row text-white ml-5   ">
+
+                                <div class="col text-white  ">
+
+                                    <div>
+
+                                        <i class="fas fa-map-marker-alt" style="color: white"></i>
+                                        <a class="text-white ml-2 " href="!# ">Jakhar Villa, Naear Lal kothi,</a>
+                                        <div class="ml-4">
+                                            Mansarover, Jaipur <br> Rajasthan, India <br> 332001 </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 p-0 m-0 mt-n2">
+                        <div class="justify-content-center text-center p-3 ">
+                            <p class="text-white font-weight-bold " style="font-size: 20px; ">Follow Us</p>
+                            <div class="pb-4 ">
+
+                                <a href="# " class="fa fa-facebook "></a>
+                                <a href="# " class="fa fa-twitter "></a>
+                                <a href="# " class="fa fa-linkedin "></a>
+                                <a href="# " class="fa fa-instagram "></a>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="justify-content-center ">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-n3">
+                    <div class="col-12 justify-content-center ">
+                        <p class="text-white justify-content-center text-center  ">
+                            Copyright ©
+                            <script async=" " src="https://www.google-analytics.com/analytics.js "></script>
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved <i class="icon-heart text-danger " aria-hidden="true "></i> by <a
+                                href="# " style="color: #ffd04d; font-weight: bold;" target="_blank ">JV
+                                Technologies</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

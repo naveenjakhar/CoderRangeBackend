@@ -1,0 +1,95 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+/*------Navigation bar--*/
+/*------Signup for--*/
+
+.right{
+  border-radius: 8px;
+  height: auto;
+}
+.form-row{
+  padding: 8px 0px;
+}
+.donate-now {
+  list-style-type: none;
+  margin: 15px 0 0 0;
+  padding: 0;
+}
+.donate-now li {
+  float: left;
+  width: 65px;
+  height: 45px;
+  position: relative;
+  margin-right: 10px;
+}
+.donate-now label,
+.donate-now input {
+  text-align:center;
+  display: block;
+  position: absolute;
+  font-size: 14px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.donate-now input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+.donate-now input[type="radio"]:checked+label,
+.Checked+label {
+  background: green;
+  color:white;
+}
+.donate-now label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+}
+
+/*------Footer--*/
+.fa {
+  padding: 15px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin:  2px;
+  border-radius: 50%;
+}
+.fa:hover{
+    color: white;
+    text-decoration: none;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.footer{
+  margin: 0;
+  padding: 0;
+}
+  
+.footershortcut{
+  color: white;
+  font-size: 18px;
+}
+.footershortcut:hover{
+  color: white;
+}

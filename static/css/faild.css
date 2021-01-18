@@ -1,0 +1,65 @@
+:root {
+    --bg: #bc2627;
+    --color1: white;
+    --color2: #0c265f;
+    --color: #66cc44;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+#subdiv {
+    background-color: var(--color1);
+    height: 500px;
+    margin-top: 70px;
+    border-radius: 25px;
+}
+
+.liveButton {
+    border-radius: 12px;
+    margin-right: 10px;
+    animation: blinking 1.5s linear infinite;
+}
+
+@-webkit-keyframes blinking {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+#check {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 330px;
+    top: 65px;
+}
+
+.text {
+    color: var(--color2);
+    font-size: 20px;
+}
+
+.button {
+    background-color: var(--bg);
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    outline: none !important;
+}
+
+.button:hover {
+    background-color: var(--color1);
+    color: var(--bg);
+    border: 1px solid var(--bg);
+}

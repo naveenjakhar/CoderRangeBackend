@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/*------Navigation bar--*/
+
+/*--modal content--*/
+.modal-backdrop{
+  bottom: 0
+}
+.modal {
+  overflow-y:auto;
+}
+.modal-content{
+  background: none;
+}
+.modal-footer {
+  border-top: 0 none;
+}
+
+.studlink{
+  text-decoration: none;
+}
+.student{
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  
+}
+.parent{
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;   
+}
+.parafont{
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.modal-header {
+  border-bottom: 0 none;
+}
+/*------Signup for--*/
+.content{
+    margin: 30px 20px ;
+}
+.container{
+  overflow: hidden;
+  }
+.module{
+    box-shadow: 5px 10px 20px #888888;
+}
+.right{
+    padding: 30px;
+}
+.form-row{
+    padding: 8px 0px;
+}
+.donate-now {
+    list-style-type: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+  }
+  .donate-now li {
+    float: left;
+    width: 65px;
+    height: 45px;
+    position: relative;
+    margin-right: 10px;
+  }
+  .donate-now label,
+  .donate-now input {
+    text-align:center;
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .donate-now input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+  .donate-now input[type="radio"]:checked+label,
+  .Checked+label {
+    background: green;
+    color:white;
+  }
+  .donate-now label {
+    padding: 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+  }
+.footer{
+    background-color: blueviolet;
+  
+}

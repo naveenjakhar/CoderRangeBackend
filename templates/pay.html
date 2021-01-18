@@ -1,0 +1,25 @@
+
+{% if payment %}
+
+<div class="text-center mx-auto">
+
+<form action="/success" method="POST"> // Replace this with your website's success callback URL
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_EL0CgmCc3DbVfk" // Enter the PUBLISH Key ID generated from the Dashboard
+        data-amount="{{payment.amount}}" // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        data-currency="INR"
+        data-order_id="{{payment.id}}"//This is a sample Order ID. Pass the `id` obtained in the response of the previous step.
+        data-buttontext="Proceed"
+        data-name="payment_mode Corp"
+        data-description="Test transaction"
+        data-image="/static/image/logo_copy.png"
+        data-prefill.name="Mohammad Numan Khan"
+        data-prefill.email="mdnumankhan786@gmail.com"
+        data-prefill.contact="8639895001"
+        data-theme.color="#F37254"
+    ></script>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+
+{% endif %}

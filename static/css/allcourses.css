@@ -1,0 +1,271 @@
+.nav .btn{
+  border-radius: 20px 20px 20px 20px;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+/*------Navigation bar--*/
+
+.navbar-nav{
+margin: 0px 20px;
+}
+.icons{
+font-size: 18px;
+cursor: pointer;  
+}
+/*--modal content--*/
+.modal-backdrop{
+  bottom: 0
+}
+.modal{
+  overflow-y:auto;
+}
+.modal-content{
+  background: none;
+}
+.modal-footer{
+  border-top: 0 none;
+}
+.studlink{
+  text-decoration: none;
+}
+.student{
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  
+}
+.parent{
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;   
+}
+.parafont{
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.sigback{
+  padding: 80px;
+}
+.modal-header {
+  border-bottom: 0 none;
+}
+/*--Home page content--*/
+/*--reasearch--*/
+.text-muted{
+  font-size: 20px;
+}
+/*--Courses--*/
+.couitem {
+  text-align: center;
+  background-color: #15b4ca;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.couitem1 {
+  text-align: center;
+  background-color: #f10750;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.couitem2 {
+  text-align: center;
+  background-color: #49bf7e;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.couitem3 {
+  text-align: center;
+  background-color: #f9b920;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.couitem4 {
+  text-align: center;
+  background-color: #bd5ffd;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.couitem5 {
+  text-align: center;
+  background-color: #ec509b;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.viewcourse {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #15b4ca;
+  color: white;
+  padding: 10px 45px;
+}
+
+
+.viewcourse3 {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f9b920;
+  color: white;
+  padding: 10px;
+}
+
+.viewcourse4 {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #bd5ffd;
+  color: white;
+  padding: 10px 45px;
+}
+
+.buycourse3 {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  background-color: #f9b920;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-decoration: none;
+}
+.viewcourse5 {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #ec509b;
+  color: white;
+  padding: 10px 45px;
+}
+.filter{
+  background-color: white;
+  color: rgb(0, 0, 0);
+  opacity: 0.5;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.filter:hover{
+  background-color:rgb(205, 157, 250);
+  border: none;
+  font-weight: bold ;
+  color: white;
+}
+
+/*--End--*/
+.end{
+  margin: 50px 0px;
+}
+.fontstyle{
+  font-family: "Times New Roman", Times, serif;
+}
+.endpar{
+  text-align:center;
+  
+  font-size: 22px;
+  opacity: 0.7;
+}
+.endbutton{
+  font-size: 20px;
+  padding: 20px 50px 20px 50px;
+  background-color:rgb(135, 178, 235);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+.endbutton:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+/*footer*/
+.footer{
+  background-color: blueviolet;
+}
+.fa {
+  padding: 15px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin:  2px;
+  border-radius: 50%;
+}
+.fa:hover{
+    color: white;
+    text-decoration: none;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.footer{
+  margin: 0;
+  padding: 0;
+}
+  
+.footershortcut{
+  color: white;
+  font-size: 18px;
+}
+.footershortcut:hover{
+  color: white;
+}
+
+.courses .container .nav .nav-tabs .nav-fill .nav-item .btn {
+    border-radius: 20px 20px 20px 20px;
+}
+
+.nav .nav-item .btn:focus{
+  background-color: blue;
+}
+
+.nav  .nav-item:hover{
+  color:white;
+ 
+}
