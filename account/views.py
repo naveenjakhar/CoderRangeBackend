@@ -11,8 +11,10 @@ from decouple import config
 from django.utils.timezone import datetime
 
 # sms account details
-account_sid = config('account_sid')
-auth_token = config('auth_token')
+# account_sid = config('account_sid')
+# auth_token = config('auth_token')
+account_sid ="ACf81588d94546448b379549bcd670c700"
+auth_token ="ef6a2aafe005ad18c3b1fb8c30168688"
 # coding......
 
 
