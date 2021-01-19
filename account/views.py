@@ -116,7 +116,7 @@ def phoneotp(request, name):
                     PhoneOTP.objects.filter(phone=items.phone).delete()
                 elif int(month1) == int(month) and int(day1) == int(day) and int(h1) == int(h) and int(m) < m1:
                     PhoneOTP.objects.filter(phone=items.phone).delete()
-            return render(request, 'Ssignup.html')
+            return render(request, 'SSignup.html')
     else:
         if request.method == 'POST':
             opt1 = ran_otp()
@@ -171,7 +171,7 @@ def phoneotp(request, name):
                 messages.info(request, 'Phonenumber is not valid')
                 return render(request, 'signup.html')
         else:
-            return render(request, 'Psignup.html')
+            return render(request, 'PSignup.html')
 
 
 def forgot_password_number(request):
