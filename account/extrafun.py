@@ -1,8 +1,7 @@
 def send_sms(account_sid,auth_token,body,from_,to_):
     from twilio.rest import Client
     client=Client(account_sid ,auth_token)
-    message=client.messages \
-        .create(
+    message=client.messages.create(
             body=body,
             from_ =from_,
             to=to_
