@@ -11,10 +11,8 @@ from decouple import config
 from django.utils.timezone import datetime
 
 # sms account details
-# account_sid = config('account_sid')
-# auth_token = config('auth_token')
-account_sid ='ACf81588d94546448b379549bcd670c700'
-auth_token ='ef6a2aafe005ad18c3b1fb8c30168688'
+account_sid = config('account_sid')
+auth_token = config('auth_token')
 # coding......
 
 
@@ -76,7 +74,7 @@ def phoneotp(request, name):
                             user = PhoneOTP.objects.filter(
                                 phone=phone).update(otp=opt1)
                             send_sms(account_sid, auth_token,
-                                     msg_body, '+18434080524', phone)
+                                     msg_body, '+14152003922', phone)
                             return redirect('/number/opt')
                         # New otp
                         else:
@@ -92,7 +90,7 @@ def phoneotp(request, name):
                                                 country=Country, kid_age=Kid_Age, category=category, lapptop_availability=Lapptop_availability, date=today)
                                 user.save()
                                 send_sms(account_sid, auth_token,
-                                         msg_body, '+18434080524', phone)
+                                         msg_body, '+14152003922', phone)
                                 return redirect('/number/opt')
                 else:
                     messages.info(request, 'Phonenumber is not valid')
@@ -118,7 +116,7 @@ def phoneotp(request, name):
                     PhoneOTP.objects.filter(phone=items.phone).delete()
                 elif int(month1) == int(month) and int(day1) == int(day) and int(h1) == int(h) and int(m) < m1:
                     PhoneOTP.objects.filter(phone=items.phone).delete()
-            return render(request, 'SSignup.html')
+            return render(request, 'Ssignup.html')
     else:
         if request.method == 'POST':
             opt1 = ran_otp()
@@ -151,7 +149,7 @@ def phoneotp(request, name):
                         user = PhoneOTP.objects.filter(
                             phone=phone).update(otp=opt1)
                         send_sms(account_sid, auth_token,
-                                 msg_body, '+18434080524', phone)
+                                 msg_body, '+14152003922', phone)
                         return redirect('/number/opt')
                     # New otp
                     else:
@@ -167,13 +165,13 @@ def phoneotp(request, name):
                                             country=Country, kid_age=Kid_Age, category=category, lapptop_availability=Lapptop_availability, date=today)
                             user.save()
                             send_sms(account_sid, auth_token,
-                                     msg_body, '+18434080524', phone)
+                                     msg_body, '+14152003922', phone)
                             return redirect('/number/opt')
             else:
                 messages.info(request, 'Phonenumber is not valid')
                 return render(request, 'signup.html')
         else:
-            return render(request, 'PSignup.html')
+            return render(request, 'Psignup.html')
 
 
 def forgot_password_number(request):
